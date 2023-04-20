@@ -53,7 +53,26 @@ public class BigliettoServiceImpl implements BigliettoService {
 
 	@Override
 	public void aggiorna(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			// questo è come il MyConnection.getConnection()
+			entityManager.getTransaction().begin();
+
+			// uso l'injection per il dao
+			bigliettaDao.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			bigliettaDao.update(input);
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 		
 	}
 
