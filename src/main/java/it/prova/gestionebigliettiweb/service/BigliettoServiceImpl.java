@@ -129,8 +129,23 @@ public class BigliettoServiceImpl implements BigliettoService {
 
 	@Override
 	public List<Biglietto> findByExample(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		// questo è come una connection
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+
+		bigliettaDao.setEntityManager(entityManager);
+
+
+		return bigliettaDao.findByExample(input);
+
+		} catch (Exception e) {
+		entityManager.getTransaction().rollback();
+		e.printStackTrace();
+		throw e;
+		} finally {
+		LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 	}
 
 	@Override
