@@ -19,7 +19,7 @@ public class UtilityBigliettoForm {
 		if (NumberUtils.isCreatable(prezzoInputStringParam)) {
 			result.setPrezzo(Integer.parseInt(prezzoInputStringParam));
 		}
-		result.setData(parseDateArrivoFromString(dataStringParam));
+		result.setData(parseDataFromString(dataStringParam));
 
 		return result;
 	}
@@ -39,7 +39,7 @@ public class UtilityBigliettoForm {
 		return true;
 	}
 
-	public static LocalDate parseDateArrivoFromString(String dataStringParam) {
+	public static LocalDate parseDataFromString(String dataStringParam) {
 		if (StringUtils.isBlank(dataStringParam))
 			return null;
 

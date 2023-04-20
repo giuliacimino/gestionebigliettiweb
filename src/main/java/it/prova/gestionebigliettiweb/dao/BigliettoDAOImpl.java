@@ -19,8 +19,8 @@ public class BigliettoDAOImpl implements BigliettoDAO{
 
 	@Override
 	public Biglietto findOne(Long id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(Biglietto.class, id);
+
 	}
 
 	@Override
@@ -31,13 +31,20 @@ public class BigliettoDAOImpl implements BigliettoDAO{
 
 	@Override
 	public void insert(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
+		if (input == null) {
+			throw new Exception("Problema valore in input");
+		}
+		entityManager.persist(input);
 		
 	}
 
 	@Override
 	public void delete(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
+		if (input == null) {
+			throw new Exception("Problema valore in input");
+		}
+		entityManager.remove(entityManager.merge(input));
+
 		
 	}
 

@@ -20,8 +20,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown07">
-              <li><a class="dropdown-item" href="ListArticoliServlet">Lista Elementi</a></li>
-              <li><a class="dropdown-item" href="PrepareInsertArticoloServlet">Inserisci Nuovo</a></li>
+              <li><a class="dropdown-item" href="ListBigliettiServlet">Lista Elementi</a></li>
+              <li><a class="dropdown-item" href="PrepareInsertBigliettoServlet">Inserisci Nuovo</a></li>
               <li><a class="dropdown-item" href="PrepareSearchArticoloServlet">Ricerca</a></li>
             </ul>
           </li>
