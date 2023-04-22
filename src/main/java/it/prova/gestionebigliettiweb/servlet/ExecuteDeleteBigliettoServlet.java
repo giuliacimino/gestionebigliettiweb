@@ -38,7 +38,7 @@ public class ExecuteDeleteBigliettoServlet extends HttpServlet {
 		if (!NumberUtils.isCreatable(idBigliettoParam)) {
 			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/biglietto/delete.jsp").forward(request, response);
+			request.getRequestDispatcher("/biglietto/provadelete.jsp").forward(request, response);
 			return;
 		}
 
@@ -50,7 +50,7 @@ public class ExecuteDeleteBigliettoServlet extends HttpServlet {
 			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/biglietto/delete.jsp").forward(request, response);
+			request.getRequestDispatcher("/biglietto/provadelete.jsp").forward(request, response);
 			return;
 		}
 		

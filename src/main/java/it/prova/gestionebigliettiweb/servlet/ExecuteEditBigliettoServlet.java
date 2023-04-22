@@ -40,7 +40,7 @@ public class ExecuteEditBigliettoServlet extends HttpServlet {
 		// validazione id
 		if (!NumberUtils.isCreatable(idBigliettoToUpdate)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/biglietto/edit.jsp").forward(request, response);
+			request.getRequestDispatcher("/biglietto/provaedit.jsp").forward(request, response);
 			return;
 
 		}
@@ -62,7 +62,7 @@ public class ExecuteEditBigliettoServlet extends HttpServlet {
 		if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance)) {
 			request.setAttribute("edit_biglietto_attr", bigliettoInstance);
 			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
-			request.getRequestDispatcher("/biglietto/edit.jsp").forward(request, response);
+			request.getRequestDispatcher("/biglietto/provaedit.jsp").forward(request, response);
 			return;
 		}
 

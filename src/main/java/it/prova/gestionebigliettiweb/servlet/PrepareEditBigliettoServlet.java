@@ -43,7 +43,7 @@ public class PrepareEditBigliettoServlet extends HttpServlet {
 		}
 		request.setAttribute("edit_biglietto_attr", result);
 		
-		request.getRequestDispatcher("/biglietto/edit.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/provaedit.jsp").forward(request, response);
 	}
 
 

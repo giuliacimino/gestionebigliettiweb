@@ -43,7 +43,7 @@ public class PrepareDeleteBigliettoServlet extends HttpServlet {
 		}
 		request.setAttribute("delete_biglietto_attr", result);
 		
-		request.getRequestDispatcher("/biglietto/delete.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/provadelete.jsp").forward(request, response);
 	}
 
 
