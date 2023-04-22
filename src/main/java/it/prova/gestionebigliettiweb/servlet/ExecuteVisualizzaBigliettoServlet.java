@@ -52,7 +52,7 @@ public class ExecuteVisualizzaBigliettoServlet extends HttpServlet {
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 		return;
 		}
-		request.getRequestDispatcher("/biglietto/show.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/provashow.jsp").forward(request, response);
 		}
 
 
