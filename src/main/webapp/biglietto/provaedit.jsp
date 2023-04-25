@@ -13,7 +13,45 @@
 
 <jsp:include page="../header.jsp" />
 	<title>Update</title>
-<title>Insert title here</title>
+	
+	
+		<script>
+	function validateForm() {
+	  var provenienza = document.getElementById("provenienza").value;
+	  var destinazione = document.getElementById("destinazione").value;
+	  var prezzo = document.getElementById("prezzo").value;
+	  var data = document.getElementById("data").value;
+	  if (provenienza == "") {
+	    document.getElementById("provenienza").classList.add("is-invalid");
+	    document.getElementById("provenienza").focus();
+	    return false;
+	  } else {
+	    document.getElementById("provenienza").classList.remove("is-invalid");
+	  }
+	  if (destinazione == "") {
+	    document.getElementById("destinazione").classList.add("is-invalid");
+	    document.getElementById("destinazione").focus();
+	    return false;
+	  } else {
+	    document.getElementById("destinazione").classList.remove("is-invalid");
+	  }
+	  if (prezzo == "") {
+	    document.getElementById("prezzo").classList.add("is-invalid");
+	    document.getElementById("prezzo").focus();
+	    return false;
+	  } else {
+	    document.getElementById("prezzo").classList.remove("is-invalid");
+	  }
+	  if (data == "") {
+	    document.getElementById("data").classList.add("is-invalid");
+	    document.getElementById("data").focus();
+	    return false;
+	  } else {
+	    document.getElementById("data").classList.remove("is-invalid");
+	  }
+	  return true;
+	}
+	</script>
 </head>
 <body class="d-flex flex-column h-100">
 

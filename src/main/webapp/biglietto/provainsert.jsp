@@ -6,6 +6,42 @@
 <html>
 <head>
 
+
+ <script>
+	function validateForm() {
+		var provenienza = document.getElementById("provenienza");
+		var destinazione = document.getElementById("destinazione");
+		var prezzo = document.getElementById("prezzo");
+		var data = document.getElementById("data");
+		var formIsValid = true;
+		if (provenienza.value === "") {
+			provenienza.classList.add("is-invalid");
+			formIsValid = false;
+		} else {
+			provenienza.classList.remove("is-invalid");
+		}
+		if (destinazione.value === "") {
+			destinazione.classList.add("is-invalid");
+			formIsValid = false;
+		} else {
+			destinazione.classList.remove("is-invalid");
+		}
+		if (prezzo.value === "") {
+			prezzo.classList.add("is-invalid");
+			formIsValid = false;
+		} else {
+			prezzo.classList.remove("is-invalid");
+		}
+		if (data.value === "") {
+			data.classList.add("is-invalid");
+			formIsValid = false;
+		} else {
+			data.classList.remove("is-invalid");
+		}
+		return formIsValid;
+	}
+	</script> 
+
 <!-- Common imports in pages -->
 	 	<jsp:include page="../header.jsp" />
 <meta charset="ISO-8859-1">
